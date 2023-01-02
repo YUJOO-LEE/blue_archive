@@ -25,6 +25,8 @@ const reducer = (state: number, action: Action) => {
       return action.curPage + 1;
     case 'PREV':
       return action.curPage - 1;
+    case 'MOVETO':
+      return action.curPage;
     default:
       return state;
   }

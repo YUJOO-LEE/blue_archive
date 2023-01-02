@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <FooterWarp>
-      Footer
+      YUJOO-LEE @ www.leeyujoo.com
     </FooterWarp>
   )
 }
@@ -18,4 +18,8 @@ const FooterWarp = styled.footer`
   bottom: 0;
 
   background-color: #fff;
+  font: 12px arial;
+  text-align: center;
+  line-height: 30px;
+  color: #444;
 `;

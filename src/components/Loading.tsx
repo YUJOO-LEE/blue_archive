@@ -57,6 +57,7 @@ const LoadingWrap = styled.aside`
   left: 0;
   opacity: 0;
   animation: ${fadeIn} 1.5s linear 1 forwards;
+  background: rgba(0,0,0,0.3);
 
   &.ended span{
     opacity: 0;

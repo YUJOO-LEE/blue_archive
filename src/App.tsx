@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import styled from 'styled-components';
 import About from './components/About';
 import Community from './components/Community';
 import { ScrollContext } from './components/ContextAPI';
@@ -12,11 +13,11 @@ const App = () => {
   return (
     <>
       <Layout>
-        <main>
+        <Main>
           <About pageNum={1} />
           <Media pageNum={2} />
           <Community pageNum={3} />
-        </main>
+        </Main>
       </Layout>
       {IsLoading && <Loading />}
     </>
@@ -24,3 +25,7 @@ const App = () => {
 }
 
 export default App;
+
+const Main = styled.main`
+  perspective: 1000px;
+`;

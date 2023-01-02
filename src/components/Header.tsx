@@ -24,7 +24,7 @@ const HeaderWrap = styled.header`
   position: fixed;
   display: flex;
   align-items: center;
-
+  z-index: 10;
   background-color: #fff;
 `;
 

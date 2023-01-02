@@ -1,4 +1,4 @@
-import { createContext, useReducer, PropsWithChildren, useEffect, useState } from 'react';
+import { createContext, useReducer, PropsWithChildren, useState, Dispatch, SetStateAction } from 'react';
 
 interface Action {
   type: string,
@@ -9,12 +9,14 @@ interface ContextType {
   state: number;
   dispatch: ({type, curPage}: Action) => void;
   IsLoading: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>> | null;
 }
 
 export const ScrollContext = createContext<ContextType>({
   state: 0,
   dispatch: () => {},
   IsLoading: false,
+  setIsLoading: null
 });
 
 const reducer = (state: number, action: Action) => {
@@ -30,26 +32,10 @@ const reducer = (state: number, action: Action) => {
 
 const ScrollIndexProvider = ({ children }: PropsWithChildren) => {
   const [IsLoading, setIsLoading] = useState(false);
-  const [state, dispatch] = useReducer(reducer, 0);
+  const [state, dispatch] = useReducer(reducer, 1);
 
-  useEffect(() => {
-    const pageHeight = window.innerHeight;
-
-    setIsLoading(true);
-
-    setTimeout(() => {
-      window.scrollTo({
-        top: pageHeight * (state - 1),
-        left: 0,
-      });
-
-      setIsLoading(false);
-    }, 1000);
-  }, [state]);
-
-  console.log(IsLoading);
   return (
-    <ScrollContext.Provider value={{ state, dispatch, IsLoading}}>
+    <ScrollContext.Provider value={{ state, dispatch, IsLoading, setIsLoading}}>
       {children}
     </ScrollContext.Provider>
   )

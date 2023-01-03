@@ -1,6 +1,6 @@
 import { ReactNode, useContext, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { ScrollContext } from './ContextAPI';
+import { ScrollContext } from '../common/ContextAPI';
 
 const SectionLayout = ({ children, pageNum }: { children: ReactNode; pageNum: number }) => {
   const { state, dispatch, setIsLoading } = useContext(ScrollContext);

@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import About from './components/About';
-import Community from './components/Community';
-import { ScrollContext } from './components/ContextAPI';
-import Layout from './components/Layout';
-import Loading from './components/Loading';
-import Media from './components/Media';
+import About from './components/page/About';
+import Community from './components/page/Community';
+import { ScrollContext } from './components/common/ContextAPI';
+import Layout from './components/common/Layout';
+import Loading from './components/common/Loading';
+import Media from './components/page/Media';
 
 const App = () => {
   const { IsLoading } = useContext(ScrollContext);
